@@ -1,1 +1,2 @@
-json.array! @cards, partial: 'cards/card', as: :card
+# json.array! Card.all, partial: 'cards/card', as: :card
+{ ok: 'ok' }
