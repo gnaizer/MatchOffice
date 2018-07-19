@@ -9,10 +9,11 @@ class CardsController < ApplicationController
   end
 
   def update
-    @cards = Card.opened
+    @cards = Card.opened(params[:user_id])
+    cards_json = @cards.to_json
+    @cards.card_users.destroy_all
     respond_to do |format|
-        format.json { render json: @cards.to_json }
-        # Card.opened.update_all(opened: false)
+      format.json { render json: cards_json }
       end
   rescue
     respond_to  do |format|
