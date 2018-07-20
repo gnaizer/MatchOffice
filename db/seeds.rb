@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+(2...13)each do |i|
+  [ :spade, :heart, :club, :diamond ].each do |suit|
+    Card.create(card: i, suit: suit)
+  end
+end
